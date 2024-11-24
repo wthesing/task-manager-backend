@@ -1,5 +1,5 @@
 // Set the API base URL (make sure this matches your backend URL)
-const apiUrl = 'http://localhost:3000';
+const apiUrl = 'https://task-manager-backend-bet2.onrender.com';
 
 
 async function fetchTasks() {
