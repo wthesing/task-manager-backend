@@ -1,0 +1,12 @@
+# Node.js modules
+node_modules/
+
+# Logs
+*.log
+
+# Temporary files
+.DS_Store
+*.tmp
+
+# Videos (since they're now hosted externally)
+public/videos/

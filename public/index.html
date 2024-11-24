@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="task-manager">
+        <h1>Task Manager</h1>
+
+        <!-- Tab Navigation -->
+        <div id="tabs">
+            <button class="tab" onclick="showTab('create')">Create Task</button>
+            <button class="tab" onclick="showTab('taskList')">Task List</button>
+            <button class="tab" onclick="showTab('archivedTasks')">Archived Tasks</button>
+            <button class="tab" onclick="showTab('schoolVideos')">School Video</button>
+            <button class="tab" onclick="showTab('workVideos')">Work Video</button>
+            <button class="tab" onclick="showTab('personalVideos')">Personal Video</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="create" class="tab-content">
+            <form id="task-form">
+                <!-- Form to create a new task -->
+                <!-- Category Dropdown -->
+                <label for="category">Select Category:</label>
+                <select id="category" name="category" onchange="showCategoryImages(this.value)" required>
+                    <option value="">--Select Category--</option>
+                    <option value="School">School</option>
+                    <option value="Work">Work</option>
+                    <option value="Personal">Personal</option>
+                </select>
+                <div id="imageContainer"></div>                
+                <!-- Images for category selection -->
+                <div id="category-images"></div> <!-- Place for displaying images -->
+                <input type="text" id="task-tags" placeholder="Tag" readonly>
+                <!-- Task Name and Other Fields -->
+                <input type="text" id="task-name" placeholder="Task Name" required>
+                <textarea id="task-description" placeholder="Description"></textarea>
+                <input type="date" id="task-due-date" required>
+                <select id="task-priority" required>
+                    <option value="Low">Low</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <select id="task-status">
+                    <option value="pending" selected>Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+        
+        <div id="taskList" class="tab-content" style="display: none;">
+            <h2>Active Tasks</h2>
+            <ul id="task-list">
+                <!-- This will be populated with tasks from the backend -->
+            </ul>
+        </div>
+
+        <div id="archivedTasks" class="tab-content" style="display: none;">
+            <h2>Archived Tasks</h2>
+            <ul id="archived-task-list">
+                <!-- Archived tasks will be listed here -->
+            </ul>
+        </div>
+
+        <div id="schoolVideos" class="tab-content" style="display: none;">
+            <h2>School Category Video</h2>
+            <div style="padding:56.25% 0 0 0;position:relative;">
+                <iframe src="https://player.vimeo.com/video/1032875307?h=966ada857e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                        frameborder="0" 
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                        title="School">
+                </iframe>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+        
+
+        <div id="workVideos" class="tab-content" style="display: none;">
+            <h2>Work Category Video</h2>
+            <div style="padding:56.25% 0 0 0;position:relative;">
+                <iframe src="https://player.vimeo.com/video/1032873999?h=8554406e3f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                        frameborder="0" 
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                        title="Work">
+                </iframe>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+        
+
+        <div id="personalVideos" class="tab-content" style="display: none;">
+            <h2>Personal Category Video</h2>
+            <div style="padding:56.25% 0 0 0;position:relative;">
+                <iframe src="https://player.vimeo.com/video/1032875732?h=4a46b143d9&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                        frameborder="0" 
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                        title="Personal">
+                </iframe>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+        
+    </div>
+    
+    <script src="app.js" defer></script>
+</body>
+
+
+</html>
+
